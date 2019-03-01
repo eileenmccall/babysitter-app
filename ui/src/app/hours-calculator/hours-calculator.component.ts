@@ -10,11 +10,13 @@ export class HoursCalculatorComponent implements OnInit {
 
   constructor() { }
 
-  form: FormGroup = new FormGroup({
-    startTime: new FormControl()
-  });
+  form: FormGroup;
 
   ngOnInit() {
+    this.form = new FormGroup({
+      startTime: new FormControl(),
+      endTime: new FormControl()
+    });
   }
 
 }

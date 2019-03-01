@@ -31,4 +31,9 @@ describe('HoursCalculatorComponent', () => {
     const control = component.form.controls['startTime'];
     expect(control instanceof FormControl).toBeTruthy();
   });
+
+  it('should have a form control for end time', () => {
+    const control = component.form.controls['endTime'];
+    expect(control instanceof FormControl).toBeTruthy();
+  });
 });
