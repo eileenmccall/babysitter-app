@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-hours-calculator',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class HoursCalculatorComponent implements OnInit {
 
   constructor() { }
+
+  form: FormGroup = new FormGroup({});
 
   ngOnInit() {
   }
