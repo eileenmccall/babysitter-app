@@ -27,18 +27,10 @@ describe('HoursCalculatorComponent', () => {
     expect(component.form instanceof FormGroup).toBeTruthy();
   });
 
-  it('should have a form control for start time', () => {
-    const control = component.form.controls['startTime'];
-    expect(control instanceof FormControl).toBeTruthy();
-  });
-
-  it('should have a form control for end time', () => {
-    const control = component.form.controls['endTime'];
-    expect(control instanceof FormControl).toBeTruthy();
-  });
-
-  it('should have a form control for family', () => {
-    const control = component.form.controls['family'];
-    expect(control instanceof FormControl).toBeTruthy();
+  it('should create form controls', () => {
+    const controls = component.form.controls;
+    expect(controls['startTime']).toBeTruthy();
+    expect(controls['endTime']).toBeTruthy();
+    expect(controls['family']).toBeTruthy();
   });
 });
