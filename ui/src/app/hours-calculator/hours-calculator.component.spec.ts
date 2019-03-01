@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { HoursCalculatorComponent } from './hours-calculator.component';
 
 describe('HoursCalculatorComponent', () => {
@@ -25,5 +25,10 @@ describe('HoursCalculatorComponent', () => {
 
   it('should create a FormGroup', () => {
     expect(component.form instanceof FormGroup).toBeTruthy();
+  });
+
+  it('should have a form control for start time', () => {
+    const control = component.form.controls['startTime'];
+    expect(control instanceof FormControl).toBeTruthy();
   });
 });

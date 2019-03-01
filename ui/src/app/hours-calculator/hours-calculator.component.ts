@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-hours-calculator',
@@ -10,7 +10,9 @@ export class HoursCalculatorComponent implements OnInit {
 
   constructor() { }
 
-  form: FormGroup = new FormGroup({});
+  form: FormGroup = new FormGroup({
+    startTime: new FormControl()
+  });
 
   ngOnInit() {
   }
