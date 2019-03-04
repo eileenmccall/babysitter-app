@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-hours-calculator',
@@ -8,15 +8,19 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class HoursCalculatorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   form: FormGroup;
 
   ngOnInit() {
-    this.form = new FormGroup({
-      startTime: new FormControl(),
-      endTime: new FormControl(),
-      family: new FormControl()
+    this.buildForm();
+  }
+
+  buildForm() {
+    this.form = this.formBuilder.group({
+      startTime: this.formBuilder.control(''),
+      endTime: this.formBuilder.control(''),
+      family: this.formBuilder.control('')
     });
   }
 

@@ -1,11 +1,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HoursCalculatorComponent } from './hours-calculator/hours-calculator.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [],
+      imports: [
+        ReactiveFormsModule
+      ],
       declarations: [
         AppComponent,
         HoursCalculatorComponent

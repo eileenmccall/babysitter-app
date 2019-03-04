@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HoursCalculatorComponent } from './hours-calculator.component';
 
 describe('HoursCalculatorComponent', () => {
@@ -8,7 +8,10 @@ describe('HoursCalculatorComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HoursCalculatorComponent ]
+      declarations: [ HoursCalculatorComponent ],
+      imports: [
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));
@@ -24,6 +27,7 @@ describe('HoursCalculatorComponent', () => {
   });
 
   it('should create a FormGroup', () => {
+    component.ngOnInit();
     expect(component.form instanceof FormGroup).toBeTruthy();
   });
 
