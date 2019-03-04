@@ -10,6 +10,7 @@ describe('HoursCalculatorComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HoursCalculatorComponent ],
       imports: [
+        FormsModule,
         ReactiveFormsModule
       ]
     })
@@ -47,5 +48,8 @@ describe('HoursCalculatorComponent', () => {
     expect(component.form.valid).toBeFalsy();
   });
 
-
+  it('form should exist in template', () => {
+    const form = fixture.nativeElement.querySelector('form');
+    expect(form).not.toBeNull();
+  });
 });

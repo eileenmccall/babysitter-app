@@ -7,6 +7,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        FormsModule,
         ReactiveFormsModule
       ],
       declarations: [
