@@ -5,8 +5,8 @@ This is an app designed to calculate a babysitter's pay depending on start time,
 ## To run the app
 
 Clone repo, then install dependencies  
-`cd ui  
-npm install`  
+`cd ui`  
+`npm install`  
 
 Run the Angular app  
 `ng serve`
