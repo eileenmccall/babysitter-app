@@ -22,6 +22,11 @@ describe('HoursCalculatorComponent', () => {
     fixture.detectChanges();
   });
 
+  it('should create an h1 with the title "Babysitter Hours Calculator"', () => {
+    const h1 = fixture.nativeElement.querySelector('h1');
+    expect(h1.textContent).toContain('Babysitter Hours Calculator');
+  });
+
   it('should create the component', () => {
     expect(component).toBeTruthy();
   });
@@ -41,4 +46,6 @@ describe('HoursCalculatorComponent', () => {
   it('form should be invalid if empty', () => {
     expect(component.form.valid).toBeFalsy();
   });
+
+
 });
