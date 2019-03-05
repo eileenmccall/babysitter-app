@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HoursCalculatorComponent } from './hours-calculator/hours-calculator.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -10,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HoursCalculatorComponent
   ],
   imports: [
+    NgbModule,
     ReactiveFormsModule,
     BrowserModule
   ],
