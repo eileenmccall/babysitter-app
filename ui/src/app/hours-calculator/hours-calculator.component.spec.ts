@@ -32,7 +32,7 @@ describe('HoursCalculatorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create form controls', () => {
+  it('should create form and controls', () => {
     component.ngOnInit();
     expect(component.form instanceof FormGroup).toBeTruthy();
 
