@@ -55,4 +55,15 @@ describe('HoursCalculatorComponent', () => {
     component.ngOnInit();
     expect(component.form.valid).toBeFalsy();
   });
+
+  it('should be invalid unless all fields are supplied', () => {
+    component.ngOnInit();
+    expect(component.form.valid).toBeFalsy();
+    component.form.controls['startTime'].setValue(new Date());
+    expect(component.form.valid).toBeFalsy();
+    component.form.controls['endTime'].setValue(new Date());
+    expect(component.form.valid).toBeFalsy();
+    component.form.controls['family'].setValue('family2');
+    expect(component.form.valid).toBeTruthy();
+  });
 });
