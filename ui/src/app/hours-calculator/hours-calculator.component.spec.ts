@@ -66,4 +66,9 @@ describe('HoursCalculatorComponent', () => {
     component.form.controls['family'].setValue('family2');
     expect(component.form.valid).toBeTruthy();
   });
+
+  it('should have a submit method', () => {
+    expect(component.submit).toBeDefined();
+    expect(typeof component.submit === 'function').toBeTruthy();
+  });
 });
