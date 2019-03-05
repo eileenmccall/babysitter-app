@@ -32,36 +32,26 @@ describe('HoursCalculatorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should create a FormGroup', () => {
+  it('should create form controls', () => {
     component.ngOnInit();
     expect(component.form instanceof FormGroup).toBeTruthy();
+
+    const controls = component.form.controls;
+    expect(controls['startTime'] instanceof FormControl).toBeTruthy();
+    expect(controls['endTime'] instanceof FormControl).toBeTruthy();
+    expect(controls['family'] instanceof FormControl).toBeTruthy();
   });
 
-  it('should create form controls', () => {
-    const controls = component.form.controls;
-    expect(controls['startTime']).toBeTruthy();
-    expect(controls['endTime']).toBeTruthy();
-    expect(controls['family']).toBeTruthy();
+  it('should create form and controls in template', () => {
+    const form = fixture.nativeElement.querySelector('form');
+    expect(form).not.toBeNull();
+
+    expect(fixture.nativeElement.querySelector('#startTime')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('#endTime')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('#family')).not.toBeNull();
   });
 
   it('form should be invalid if empty', () => {
     expect(component.form.valid).toBeFalsy();
-  });
-
-  it('form should exist in template', () => {
-    const form = fixture.nativeElement.querySelector('form');
-    expect(form).not.toBeNull();
-  });
-
-  it('should have an input for startTime', () => {
-    expect(fixture.nativeElement.querySelector('#startTime')).not.toBeNull();
-  });
-
-  it('should have an input for endTime', () => {
-    expect(fixture.nativeElement.querySelector('#endTime')).not.toBeNull();
-  });
-
-  it('should have a select for family', () => {
-    expect(fixture.nativeElement.querySelector('#family')).not.toBeNull();
   });
 });
