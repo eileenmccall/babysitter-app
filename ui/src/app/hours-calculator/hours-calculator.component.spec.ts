@@ -60,4 +60,8 @@ describe('HoursCalculatorComponent', () => {
   it('should have an input for endTime', () => {
     expect(fixture.nativeElement.querySelector('#endTime')).not.toBeNull();
   });
+
+  it('should have a select for family', () => {
+    expect(fixture.nativeElement.querySelector('#family')).not.toBeNull();
+  });
 });
