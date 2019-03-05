@@ -52,7 +52,7 @@ describe('HoursCalculatorComponent', () => {
   });
 
   it('form should be invalid if empty', () => {
-
-    expect(component.form.valid).toBeDefined();
+    component.ngOnInit();
+    expect(component.form.valid).toBeFalsy();
   });
 });
