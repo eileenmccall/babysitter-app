@@ -56,4 +56,8 @@ describe('HoursCalculatorComponent', () => {
   it('should have an input for startTime', () => {
     expect(fixture.nativeElement.querySelector('#startTime')).not.toBeNull();
   });
+
+  it('should have an input for endTime', () => {
+    expect(fixture.nativeElement.querySelector('#endTime')).not.toBeNull();
+  });
 });
