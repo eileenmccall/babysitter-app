@@ -3,13 +3,13 @@
     <div class="col">
       <div class="form-group">
         <label for="startTime">Start Time</label>
-        <ngb-timepicker formControlName="startTime" required></ngb-timepicker>
+        <ngb-timepicker id="startTime" formControlName="startTime" required></ngb-timepicker>
       </div>
     </div>
     <div class="col">
       <div class="form-group">
         <label for="endTime">End Time</label>
-        <ngb-timepicker formControlName="endTime" required></ngb-timepicker>
+        <ngb-timepicker id="endTime" formControlName="endTime" required></ngb-timepicker>
       </div >
     </div>
   </div>
@@ -25,6 +25,6 @@
       </div>
     </div>
   </div>
-  <button class="btn btn-primary" type="submit">Calculate Pay</button>
+  <button class="btn btn-primary" id="submitButton" type="submit" [disabled]="!form.valid">Calculate Pay</button>
 </form>
 

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormGroup, FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HoursCalculatorComponent } from './hours-calculator.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 describe('HoursCalculatorComponent', () => {
   let component: HoursCalculatorComponent;
@@ -10,6 +11,7 @@ describe('HoursCalculatorComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HoursCalculatorComponent ],
       imports: [
+        NgbModule,
         FormsModule,
         ReactiveFormsModule
       ]
@@ -65,5 +67,17 @@ describe('HoursCalculatorComponent', () => {
   it('should have a submit method', () => {
     expect(component.submit).toBeDefined();
     expect(typeof component.submit === 'function').toBeTruthy();
+  });
+
+  it('button should be disabled unless form is valid', () => {
+    const button = fixture.nativeElement.querySelector('#submitButton');
+    expect(button.disabled).toBeTruthy();
+    component.form.setValue({
+      startTime: { hour: 17, minute: 0},
+      endTime: { hour: 24, minute: 15},
+      family: 'family2'
+    });
+    fixture.detectChanges();
+    expect(button.disabled).toBeFalsy();
   });
 });
