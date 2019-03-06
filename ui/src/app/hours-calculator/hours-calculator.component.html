@@ -1,10 +1,22 @@
-<h1>Babysitter Hours Calculator</h1>
-<form [formGroup]="form">
-  <input id="startTime" type="time" formControlName="startTime">
-  <input id="endTime" type="time" formControlName="endTime">
-  <select id="family" formControlName="family">
-    <option value="family1">Family 1</option>
-    <option value="family2">Family 2</option>
-    <option value="family3">Family 3</option>
-  </select>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="startTime">Start Time</label>
+    <input class="form-control" id="startTime" type="time" formControlName="startTime">
+  </div>
+
+  <div class="form-group">
+    <label for="endTime">End Time</label>
+    <input class="form-control" id="endTime" type="time" formControlName="endTime">
+  </div >
+
+  <div class="form-group">
+    <label for="family">Family</label>
+    <select class="form-control" id="family" formControlName="family">
+      <option value="family1">Family 1</option>
+      <option value="family2">Family 2</option>
+      <option value="family3">Family 3</option>
+    </select>
+  </div>
+  <button class="btn btn-primary" type="submit">Calculate Pay</button>
 </form>
+
