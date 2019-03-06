@@ -1,21 +1,29 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <div class="form-group">
-    <label for="startTime">Start Time</label>
-    <input class="form-control" id="startTime" type="time" formControlName="startTime">
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <ngb-timepicker formControlName="startTime" required></ngb-timepicker>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="endTime">End Time</label>
+        <ngb-timepicker formControlName="endTime" required></ngb-timepicker>
+      </div >
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="endTime">End Time</label>
-    <input class="form-control" id="endTime" type="time" formControlName="endTime">
-  </div >
-
-  <div class="form-group">
-    <label for="family">Family</label>
-    <select class="form-control" id="family" formControlName="family">
-      <option value="family1">Family 1</option>
-      <option value="family2">Family 2</option>
-      <option value="family3">Family 3</option>
-    </select>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="family">Family</label>
+        <select class="form-control" id="family" formControlName="family">
+          <option value="family1">Family 1</option>
+          <option value="family2">Family 2</option>
+          <option value="family3">Family 3</option>
+        </select>
+      </div>
+    </div>
   </div>
   <button class="btn btn-primary" type="submit">Calculate Pay</button>
 </form>
