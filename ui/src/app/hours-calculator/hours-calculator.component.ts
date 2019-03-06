@@ -18,7 +18,19 @@ export class HoursCalculatorComponent implements OnInit {
 
   buildForm() {
     this.form = this.formBuilder.group({
-      startTime: this.formBuilder.control('', [Validators.required]),
+      startTime: this.formBuilder.control('', [Validators.required, (control: FormControl) => {
+        const value = control.value;
+
+        if (!value) {
+          return null;
+        }
+
+        if (value.hour < 17 && value.hour > 3) {
+          return { 'invalidTime': true };
+        }
+
+        return null;
+      }]),
       endTime: this.formBuilder.control('', [Validators.required]),
       family: this.formBuilder.control('', [Validators.required])
     });

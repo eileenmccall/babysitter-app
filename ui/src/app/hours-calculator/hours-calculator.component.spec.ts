@@ -80,4 +80,17 @@ describe('HoursCalculatorComponent', () => {
     fixture.detectChanges();
     expect(button.disabled).toBeFalsy();
   });
+
+  it('start time should be invalid if invalid time is entered', () => {
+    component.form.controls['startTime'].setValue({
+      hour: 6,
+      minute: 30
+    });
+    expect(component.form.controls['startTime'].valid).toBeFalsy();
+    component.form.controls['startTime'].setValue({
+      hour: 18,
+      minute: 0
+    });
+    expect(component.form.controls['startTime'].valid).toBeTruthy();
+  });
 });
